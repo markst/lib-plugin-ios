@@ -16,12 +16,6 @@ let package = Package(
         .binaryTarget(
             name: "YouboraLib",
             path: "YouboraLib.xcframework"
-        ),
-        .testTarget(
-            name: "YouboraLibTests",
-            dependencies: ["YouboraLib"],
-            path: "YouboraLibTests"
         )
     ]
 )
-
