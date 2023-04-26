@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
 
   # Source files
   s.source_files  = 'YouboraLib/**/*.{swift,h,m}'
-  s.public_header_files = 'YouboraLib/**/YBSwift.h'
-
+  s.public_header_files = 'YouboraLib/**/*.h'
+  
   # Project settings
   s.requires_arc = true
   s.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) YOUBORALIB_VERSION=' + s.version.to_s }
