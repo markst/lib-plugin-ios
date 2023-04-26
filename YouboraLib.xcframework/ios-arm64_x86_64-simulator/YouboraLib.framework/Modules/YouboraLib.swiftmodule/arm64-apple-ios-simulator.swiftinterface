@@ -1,0 +1,658 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 effective-4.1.50 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name YouboraLib
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import SQLite3
+import Swift
+import UIKit
+@_exported import YouboraLib
+import _Concurrency
+import _StringProcessing
+public enum OptionKeyType {
+  case number
+  case string
+  case bool
+  case valueBool
+  case unknown
+  case depretacted
+  public static func == (a: YouboraLib.OptionKeyType, b: YouboraLib.OptionKeyType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct YBOptionUtilsKeys {
+  public static let keys: [Swift.String : (YouboraLib.OptionKeyType, Swift.String)]
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBOptionKeys : ObjectiveC.NSObject {
+  @objc public static let enabled: Swift.String
+  @objc public static let httpSecure: Swift.String
+  @objc public static let host: Swift.String
+  @objc public static let accountCode: Swift.String
+  @objc public static let authToken: Swift.String
+  @objc public static let authType: Swift.String
+  @objc public static let username: Swift.String
+  @objc public static let anonymousUser: Swift.String
+  @objc public static let privacyProtocol: Swift.String
+  @objc public static let offline: Swift.String
+  @objc public static let isInfinity: Swift.String
+  @objc public static let background: Swift.String
+  @objc public static let adBlockerDetected: Swift.String
+  @objc public static let autoStart: Swift.String
+  @objc public static let forceInit: Swift.String
+  @objc public static let userType: Swift.String
+  @objc public static let userEmail: Swift.String
+  @objc public static let experimentIds: Swift.String
+  @objc public static let ssConfigCode: Swift.String
+  @objc public static let ssGroupCode: Swift.String
+  @objc public static let ssContractCode: Swift.String
+  @objc public static let parseResource: Swift.String
+  @objc public static let parseResourceAuth: Swift.String
+  @objc public static let parseHls: Swift.String
+  @objc public static let parseDash: Swift.String
+  @objc public static let parseCdnNameHeader: Swift.String
+  @objc public static let parseCdnNameHeaderList: Swift.String
+  @objc public static let parseCdnNodeHeader: Swift.String
+  @objc public static let parseCdnNode: Swift.String
+  @objc public static let parseCdnNodeList: Swift.String
+  @objc public static let parseLocationHeader: Swift.String
+  @objc public static let networkIP: Swift.String
+  @objc public static let networkIsp: Swift.String
+  @objc public static let networkConnectionType: Swift.String
+  @objc public static let userObfuscateIp: Swift.String
+  @objc public static let householdId: Swift.String
+  @objc public static let deviceCode: Swift.String
+  @objc public static let deviceModel: Swift.String
+  @objc public static let deviceBrand: Swift.String
+  @objc public static let deviceType: Swift.String
+  @objc public static let deviceName: Swift.String
+  @objc public static let deviceOsName: Swift.String
+  @objc public static let deviceOsVersion: Swift.String
+  @objc public static let deviceIsAnonymous: Swift.String
+  @objc public static let deviceUUID: Swift.String
+  @objc public static let deviceEDID: Swift.String
+  @objc public static let contentResource: Swift.String
+  @objc public static let contentIsLive: Swift.String
+  @objc public static let contentTitle: Swift.String
+  @objc public static let contentTotalBytes: Swift.String
+  @objc public static let contentProgram: Swift.String
+  @objc public static let contentSegmentDuration: Swift.String
+  @objc public static let contentDuration: Swift.String
+  @objc public static let contentTransactionCode: Swift.String
+  @objc public static let contentBitrate: Swift.String
+  @objc public static let contentThroughput: Swift.String
+  @objc public static let contentRendition: Swift.String
+  @objc public static let contentCdn: Swift.String
+  @objc public static let contentCdnNode: Swift.String
+  @objc public static let contentCdnType: Swift.String
+  @objc public static let contentFps: Swift.String
+  @objc public static let contentStreamingProtocol: Swift.String
+  @objc public static let contentTransportFormat: Swift.String
+  @objc public static let contentMetadata: Swift.String
+  @objc public static let contentMetrics: Swift.String
+  @objc public static let contentIsLiveNoSeek: Swift.String
+  @objc public static let contentIsLiveNoMonitor: Swift.String
+  @objc public static let contentPackage: Swift.String
+  @objc public static let contentSaga: Swift.String
+  @objc public static let contentTvShow: Swift.String
+  @objc public static let contentSeason: Swift.String
+  @objc public static let contentEpisodeTitle: Swift.String
+  @objc public static let contentChannel: Swift.String
+  @objc public static let contentId: Swift.String
+  @objc public static let contentImdbId: Swift.String
+  @objc public static let contentGracenoteId: Swift.String
+  @objc public static let contentType: Swift.String
+  @objc public static let contentGenre: Swift.String
+  @objc public static let contentLanguage: Swift.String
+  @objc public static let contentSubtitles: Swift.String
+  @objc public static let contentContractedResolution: Swift.String
+  @objc public static let contentCost: Swift.String
+  @objc public static let contentPrice: Swift.String
+  @objc public static let contentPlaybackType: Swift.String
+  @objc public static let contentDrm: Swift.String
+  @objc public static let contentEncodingVideoCodec: Swift.String
+  @objc public static let contentEncodingAudioCodec: Swift.String
+  @objc public static let contentEncodingCodecSettings: Swift.String
+  @objc public static let contentEncodingCodecProfile: Swift.String
+  @objc public static let contentEncodingContainerFormat: Swift.String
+  @objc public static let adMetadata: Swift.String
+  @objc public static let adIgnore: Swift.String
+  @objc public static let adAfterStop: Swift.String
+  @objc public static let adCampaign: Swift.String
+  @objc public static let adTitle: Swift.String
+  @objc public static let adResource: Swift.String
+  @objc public static let adGivenBreaks: Swift.String
+  @objc public static let adExpectedBreaks: Swift.String
+  @objc public static let adExpectedPattern: Swift.String
+  @objc public static let adBreaksTime: Swift.String
+  @objc public static let adGivenAds: Swift.String
+  @objc public static let adCreativeId: Swift.String
+  @objc public static let adProvider: Swift.String
+  @objc public static let contentCustomDimension1: Swift.String
+  @objc public static let contentCustomDimension2: Swift.String
+  @objc public static let contentCustomDimension3: Swift.String
+  @objc public static let contentCustomDimension4: Swift.String
+  @objc public static let contentCustomDimension5: Swift.String
+  @objc public static let contentCustomDimension6: Swift.String
+  @objc public static let contentCustomDimension7: Swift.String
+  @objc public static let contentCustomDimension8: Swift.String
+  @objc public static let contentCustomDimension9: Swift.String
+  @objc public static let contentCustomDimension10: Swift.String
+  @objc public static let contentCustomDimension11: Swift.String
+  @objc public static let contentCustomDimension12: Swift.String
+  @objc public static let contentCustomDimension13: Swift.String
+  @objc public static let contentCustomDimension14: Swift.String
+  @objc public static let contentCustomDimension15: Swift.String
+  @objc public static let contentCustomDimension16: Swift.String
+  @objc public static let contentCustomDimension17: Swift.String
+  @objc public static let contentCustomDimension18: Swift.String
+  @objc public static let contentCustomDimension19: Swift.String
+  @objc public static let contentCustomDimension20: Swift.String
+  @objc public static let contentCustomDimensions: Swift.String
+  @objc public static let adCustomDimension1: Swift.String
+  @objc public static let adCustomDimension2: Swift.String
+  @objc public static let adCustomDimension3: Swift.String
+  @objc public static let adCustomDimension4: Swift.String
+  @objc public static let adCustomDimension5: Swift.String
+  @objc public static let adCustomDimension6: Swift.String
+  @objc public static let adCustomDimension7: Swift.String
+  @objc public static let adCustomDimension8: Swift.String
+  @objc public static let adCustomDimension9: Swift.String
+  @objc public static let adCustomDimension10: Swift.String
+  @objc public static let appName: Swift.String
+  @objc public static let appReleaseVersion: Swift.String
+  @objc public static let linkedViewId: Swift.String
+  @objc public static let waitMetadata: Swift.String
+  @objc public static let pendingMetadata: Swift.String
+  @objc public static let method: Swift.String
+  @objc public static let sessionMetrics: Swift.String
+  @objc public static let adPositionPre: Swift.String
+  @objc public static let adPositionMid: Swift.String
+  @objc public static let adPositionPost: Swift.String
+  @objc public static let sendTotalBytes: Swift.String
+  @objc public static let cdnTTL: Swift.String
+  @objc public static let cdnSwitchHeader: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol YBResourceParser {
+  @objc func isSatisfied(resource: Swift.String?, manifest: Foundation.Data?) -> Swift.Bool
+  @objc func getRequestSource() -> Swift.String?
+  @objc func parseResource(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?) -> Swift.String?
+  @objc func parseTransportFormat(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?, userDefinedTransportFormat: Swift.String?) -> Swift.String?
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class YBAppDatabase : ObjectiveC.NSObject {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBDashParser : ObjectiveC.NSObject, YouboraLib.YBResourceParser {
+  @objc public func isSatisfied(resource: Swift.String?, manifest: Foundation.Data?) -> Swift.Bool
+  @objc public func getRequestSource() -> Swift.String?
+  @objc public func parseResource(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?) -> Swift.String?
+  @objc public func parseTransportFormat(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?, userDefinedTransportFormat: Swift.String?) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBCDNBalancerInfo : ObjectiveC.NSObject {
+  @objc public func getCdnTraffic() -> Foundation.NSNumber?
+  @objc public func getMultiCdnInfo() -> Swift.String?
+  @objc public func getProfileName() -> Swift.String?
+  @objc public func getBalancerVersion() -> Swift.String?
+  @objc public func getCdnPingInfo() -> [Swift.String : Any]?
+  @objc public func getSegmentDuration() -> Foundation.NSNumber?
+  @objc public func getBalancerResponseId() -> Swift.String?
+  @objc public func getP2PTraffic() -> Foundation.NSNumber?
+  @objc public func getUploadTraffic() -> Foundation.NSNumber?
+  @objc public func getIsP2PEnabled() -> Foundation.NSValue?
+  @objc public func updateBalancerStats()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBResourceParserUtil : ObjectiveC.NSObject {
+  @objc public static func merge(resourseUrl: Swift.String?, adapterUrl: Swift.String?) -> Swift.String?
+  @objc public static func isFinalURL(resourceUrl: Swift.String?) -> Swift.Bool
+  @objc public static func translateTransportResource(transportResource: Swift.String) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers open class YBSwiftTimer : ObjectiveC.NSObject {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class YBP2PFailedRequests : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc open class YBCDNStats : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBHlsParser : ObjectiveC.NSObject, YouboraLib.YBResourceParser {
+  @objc public func isSatisfied(resource: Swift.String?, manifest: Foundation.Data?) -> Swift.Bool
+  @objc public func getRequestSource() -> Swift.String?
+  @objc public func parseResource(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?) -> Swift.String?
+  @objc public func parseTransportFormat(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?, userDefinedTransportFormat: Swift.String?) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBLocationParser : ObjectiveC.NSObject, YouboraLib.YBResourceParser {
+  @objc public func isSatisfied(resource: Swift.String?, manifest: Foundation.Data?) -> Swift.Bool
+  @objc public func getRequestSource() -> Swift.String?
+  @objc public func parseResource(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?) -> Swift.String?
+  @objc public func parseTransportFormat(data: Foundation.Data?, response: Foundation.HTTPURLResponse?, listenerParents: [Swift.String : Swift.AnyObject]?, userDefinedTransportFormat: Swift.String?) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBEventDataSource : ObjectiveC.NSObject {
+  @objc public func putNewEvent(offlineId: Swift.Int, jsonEvents: Swift.String, completion: (() -> Swift.Void)?)
+  @objc public func allEvents(completion: @escaping ([YouboraLib.YBEvent]) -> Swift.Void)
+  @objc public func firstId(completion: @escaping (Swift.Int) -> Swift.Void)
+  @objc public func lastId(completion: @escaping (Swift.Int) -> Swift.Void)
+  @objc public func events(offlineId: Swift.Int, completion: @escaping ([YouboraLib.YBEvent]) -> Swift.Void)
+  @objc public func deleteEvents(offlineId: Swift.Int, completion: @escaping () -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBDeviceInfo : ObjectiveC.NSObject {
+  @objc public var deviceModel: Swift.String?
+  @objc public var deviceBrand: Swift.String
+  @objc public var deviceType: Swift.String?
+  @objc public var deviceName: Swift.String?
+  @objc public var deviceCode: Swift.String?
+  @objc public var deviceOsName: Swift.String?
+  @objc public var deviceOsVersion: Swift.String?
+  @objc public var deviceBrowserName: Swift.String?
+  @objc public var deviceBrowserVersion: Swift.String?
+  @objc public var deviceBrowserType: Swift.String?
+  @objc public var deviceBrowserEngine: Swift.String?
+  @objc public func deviceName(code: Swift.String) -> Swift.String
+  @objc public func mapToJSONString() -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class YBInfinityLocalManager : ObjectiveC.NSObject {
+  @objc public static func saveSession(sessionId: Swift.String)
+  @objc public static func getSessionId() -> Swift.String?
+  @objc public static func saveContext(context: Swift.String)
+  @objc public static func getContext() -> Swift.String?
+  @objc public static func saveLastActiveDate()
+  @objc public static func getLastActive() -> Foundation.NSNumber?
+  @objc public static func getBalancerStats() -> [Swift.String : Any]?
+  @objc public static func cleanLocalManager()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsRequest : ObjectiveC.NSObject {
+  @objc public static let accountCode: Swift.String
+  @objc public static let username: Swift.String
+  @objc public static let rendition: Swift.String
+  @objc public static let title: Swift.String
+  @objc public static let title2: Swift.String
+  @objc public static let live: Swift.String
+  @objc public static let segmentDuration: Swift.String
+  @objc public static let mediaDuration: Swift.String
+  @objc public static let mediaResource: Swift.String
+  @objc public static let parsedResource: Swift.String
+  @objc public static let transactionCode: Swift.String
+  @objc public static let properties: Swift.String
+  @objc public static let cdn: Swift.String
+  @objc public static let playerVersion: Swift.String
+  @objc public static let adBlockerDetected: Swift.String
+  @objc public static let param1: Swift.String
+  @objc public static let param2: Swift.String
+  @objc public static let param3: Swift.String
+  @objc public static let param4: Swift.String
+  @objc public static let param5: Swift.String
+  @objc public static let param6: Swift.String
+  @objc public static let param7: Swift.String
+  @objc public static let param8: Swift.String
+  @objc public static let param9: Swift.String
+  @objc public static let param10: Swift.String
+  @objc public static let param11: Swift.String
+  @objc public static let param12: Swift.String
+  @objc public static let param13: Swift.String
+  @objc public static let param14: Swift.String
+  @objc public static let param15: Swift.String
+  @objc public static let param16: Swift.String
+  @objc public static let param17: Swift.String
+  @objc public static let param18: Swift.String
+  @objc public static let param19: Swift.String
+  @objc public static let param20: Swift.String
+  @objc public static let dimensions: Swift.String
+  @objc public static let pluginVersion: Swift.String
+  @objc public static let pluginInfo: Swift.String
+  @objc public static let isp: Swift.String
+  @objc public static let connectionType: Swift.String
+  @objc public static let ip: Swift.String
+  @objc public static let deviceCode: Swift.String
+  @objc public static let preloadDuration: Swift.String
+  @objc public static let player: Swift.String
+  @objc public static let deviceInfo: Swift.String
+  @objc public static let userType: Swift.String
+  @objc public static let streamingProtocol: Swift.String
+  @objc public static let transportFormat: Swift.String
+  @objc public static let experiments: Swift.String
+  @objc public static let obfuscateIp: Swift.String
+  @objc public static let householdId: Swift.String
+  @objc public static let navContext: Swift.String
+  @objc public static let anonymousUser: Swift.String
+  @objc public static let privacyProtocol: Swift.String
+  @objc public static let smartswitchConfigCode: Swift.String
+  @objc public static let smartswitchGroupCode: Swift.String
+  @objc public static let smartswitchContractCode: Swift.String
+  @objc public static let nodeHost: Swift.String
+  @objc public static let nodeType: Swift.String
+  @objc public static let appName: Swift.String
+  @objc public static let appReleaseVersion: Swift.String
+  @objc public static let email: Swift.String
+  @objc public static let package: Swift.String
+  @objc public static let saga: Swift.String
+  @objc public static let tvshow: Swift.String
+  @objc public static let season: Swift.String
+  @objc public static let titleEpisode: Swift.String
+  @objc public static let channel: Swift.String
+  @objc public static let contentId: Swift.String
+  @objc public static let imdbID: Swift.String
+  @objc public static let gracenoteID: Swift.String
+  @objc public static let contentType: Swift.String
+  @objc public static let genre: Swift.String
+  @objc public static let contentLanguage: Swift.String
+  @objc public static let subtitles: Swift.String
+  @objc public static let contractedResolution: Swift.String
+  @objc public static let cost: Swift.String
+  @objc public static let price: Swift.String
+  @objc public static let playbackType: Swift.String
+  @objc public static let drm: Swift.String
+  @objc public static let videoCodec: Swift.String
+  @objc public static let audioCodec: Swift.String
+  @objc public static let codecSettings: Swift.String
+  @objc public static let codecProfile: Swift.String
+  @objc public static let containerFormat: Swift.String
+  @objc public static let adsExpected: Swift.String
+  @objc public static let deviceUUID: Swift.String
+  @objc public static let deviceEDID: Swift.String
+  @objc public static let p2pEnabled: Swift.String
+  @objc public static let adTitle: Swift.String
+  @objc public static let playhead: Swift.String
+  @objc public static let position: Swift.String
+  @objc public static let adDuration: Swift.String
+  @objc public static let adResource: Swift.String
+  @objc public static let adCampaign: Swift.String
+  @objc public static let adPlayerVersion: Swift.String
+  @objc public static let adProperties: Swift.String
+  @objc public static let adAdapterVersion: Swift.String
+  @objc public static let adInsertionType: Swift.String
+  @objc public static let extraparam1: Swift.String
+  @objc public static let extraparam2: Swift.String
+  @objc public static let extraparam3: Swift.String
+  @objc public static let extraparam4: Swift.String
+  @objc public static let extraparam5: Swift.String
+  @objc public static let extraparam6: Swift.String
+  @objc public static let extraparam7: Swift.String
+  @objc public static let extraparam8: Swift.String
+  @objc public static let extraparam9: Swift.String
+  @objc public static let extraparam10: Swift.String
+  @objc public static let skippable: Swift.String
+  @objc public static let breakNumber: Swift.String
+  @objc public static let adCreativeId: Swift.String
+  @objc public static let adProvider: Swift.String
+  @objc public static let system: Swift.String
+  @objc public static let isInfinity: Swift.String
+  @objc public static let pauseDuration: Swift.String
+  @objc public static let joinDuration: Swift.String
+  @objc public static let seekDuration: Swift.String
+  @objc public static let bufferDuration: Swift.String
+  @objc public static let bitrate: Swift.String
+  @objc public static let adJoinDuration: Swift.String
+  @objc public static let adPlayhead: Swift.String
+  @objc public static let adPauseDuration: Swift.String
+  @objc public static let adBitrate: Swift.String
+  @objc public static let adTotalDuration: Swift.String
+  @objc public static let adUrl: Swift.String
+  @objc public static let givenBreaks: Swift.String
+  @objc public static let expectedBreaks: Swift.String
+  @objc public static let expectedPattern: Swift.String
+  @objc public static let breaksTime: Swift.String
+  @objc public static let givenAds: Swift.String
+  @objc public static let expectedAds: Swift.String
+  @objc public static let adViewedDuration: Swift.String
+  @objc public static let adViewability: Swift.String
+  @objc public static let droppedFrames: Swift.String
+  @objc public static let playrate: Swift.String
+  @objc public static let latency: Swift.String
+  @objc public static let packetLoss: Swift.String
+  @objc public static let packetSent: Swift.String
+  @objc public static let metrics: Swift.String
+  @objc public static let language: Swift.String
+  @objc public static let sessionMetrics: Swift.String
+  @objc public static let nodeTypeString: Swift.String
+  @objc public static let adNumber: Swift.String
+  @objc public static let adNumberInBreak: Swift.String
+  @objc public static let fps: Swift.String
+  @objc public static let throughput: Swift.String
+  @objc public static let details: Swift.String
+  @objc public static let p2pDownloadedTraffic: Swift.String
+  @objc public static let cdnDownloadedTraffic: Swift.String
+  @objc public static let cdnBalancerResponseUUID: Swift.String
+  @objc public static let sessions: Swift.String
+  @objc public static let uploadTraffic: Swift.String
+  @objc public static let adBufferDuration: Swift.String
+  @objc public static let parentId: Swift.String
+  @objc public static let totalBytes: Swift.String
+  @objc public static let linkedViewId: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsAdInsertionType : ObjectiveC.NSObject {
+  @objc public static let clientSide: Swift.String
+  @objc public static let serverSide: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsStreamProtocol : ObjectiveC.NSObject {
+  @objc public static let hds: Swift.String
+  @objc public static let hls: Swift.String
+  @objc public static let mss: Swift.String
+  @objc public static let dash: Swift.String
+  @objc public static let rtmp: Swift.String
+  @objc public static let rtp: Swift.String
+  @objc public static let rtsp: Swift.String
+  @objc public static let multicast: Swift.String
+  @objc public static let dvb: Swift.String
+  @objc public static let dvbc: Swift.String
+  @objc public static let dvbt: Swift.String
+  @objc public static let dvbt2: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsTransportFormat : ObjectiveC.NSObject {
+  @objc public static let hlsTs: Swift.String
+  @objc public static let hlsFmp4: Swift.String
+  @objc public static let hlsCmfv: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsYouboraService : ObjectiveC.NSObject {
+  @objc public static let data: Swift.String
+  @objc public static let sInit: Swift.String
+  @objc public static let start: Swift.String
+  @objc public static let join: Swift.String
+  @objc public static let pause: Swift.String
+  @objc public static let resume: Swift.String
+  @objc public static let seek: Swift.String
+  @objc public static let buffer: Swift.String
+  @objc public static let error: Swift.String
+  @objc public static let stop: Swift.String
+  @objc public static let ping: Swift.String
+  @objc public static let cdnPing: Swift.String
+  @objc public static let offline: Swift.String
+  @objc public static let adInit: Swift.String
+  @objc public static let adStart: Swift.String
+  @objc public static let adJoin: Swift.String
+  @objc public static let adPause: Swift.String
+  @objc public static let adResume: Swift.String
+  @objc public static let adBuffer: Swift.String
+  @objc public static let adStop: Swift.String
+  @objc public static let click: Swift.String
+  @objc public static let adError: Swift.String
+  @objc public static let adManifest: Swift.String
+  @objc public static let adBreakStart: Swift.String
+  @objc public static let adBreakStop: Swift.String
+  @objc public static let adQuartile: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsYouboraInfinity : ObjectiveC.NSObject {
+  @objc public static let sessionStart: Swift.String
+  @objc public static let sessionStop: Swift.String
+  @objc public static let sessionNav: Swift.String
+  @objc public static let sessionEvent: Swift.String
+  @objc public static let sessionBeat: Swift.String
+  @objc public static let videoEvent: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstantsErrorParams : ObjectiveC.NSObject {
+  @objc public static let code: Swift.String
+  @objc public static let message: Swift.String
+  @objc public static let metadata: Swift.String
+  @objc public static let level: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBConstants : ObjectiveC.NSObject {
+  @objc public static let successListenerOfflineId: Swift.String
+  @objc public static let jsInjectionSessionRootNotification: Swift.String
+  @objc public static var youboraLibVersion: Swift.String
+  @objc public static let preferencesSessionIdKey: Swift.String
+  @objc public static let preferencesContextKey: Swift.String
+  @objc public static let preferencesLastActiveKey: Swift.String
+  @objc public static let preferencesBalancerStatsKey: Swift.String
+  @objc public static var deviceModels: [Swift.String : Swift.String] {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBYouboraUtils : ObjectiveC.NSObject {
+  @objc public static func buildRenditionString(withWidth width: Swift.Int32, height: Swift.Int32, andBitrate bitrate: Swift.Double) -> Swift.String
+  @objc public static func buildErrorParams(_ params: [Swift.String : Swift.String]?) -> [Swift.String : Swift.String]
+  @objc public static func buildErrorParams(message msg: Swift.String?, code: Swift.String?, metadata: Swift.String?, andLevel level: Swift.String?) -> [Swift.String : Swift.String]
+  @objc public static func stripProtocol(_ host: Swift.String?) -> Swift.String?
+  @objc public static func addProtocol(_ url: Swift.String?, https: Swift.Bool) -> Swift.String
+  @objc public static func stringifyList(_ list: [Any]?) -> Swift.String?
+  @objc public static func stringifyDictionary(_ dict: [Swift.AnyHashable : Any]?) -> Swift.String?
+  public static func dictionaryToObject<T>(_ dict: [Swift.String : Any], object: T.Type) throws -> T where T : Swift.Decodable
+  @objc public static func parseNumber(_ number: Foundation.NSNumber?, orDefault defaultValue: Foundation.NSNumber?) -> Foundation.NSNumber?
+  @objc public static func unixTimeNow() -> Swift.Double
+  @objc public static func getAppName() -> Swift.String?
+  @objc public static func containsString(array: [Swift.String]?, value: Swift.String) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc open class YBP2PStats : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class YBEvent : ObjectiveC.NSObject {
+  @objc final public let id: Swift.Int
+  @objc final public let jsonEvents: Swift.String
+  @objc final public let dateUpdate: Swift.Double
+  @objc final public let offlineId: Swift.Int
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc open class YBBalancerStats : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum YBSwiftLogLevel : Swift.Int {
+  case silent = 6
+  case error = 5
+  case warning = 4
+  case notice = 3
+  case debug = 2
+  case verbose = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol YBSwiftLogger {
+  @objc func logYoubora(message: Swift.String, logLevel: YouboraLib.YBSwiftLogLevel)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBSwiftLog : ObjectiveC.NSObject {
+  @objc public static var debugLevel: YouboraLib.YBSwiftLogLevel
+  public static func reportLogMessage(_ level: YouboraLib.YBSwiftLogLevel, _ format: Swift.String, _ args: any Swift.CVarArg...)
+  public static func error(_ format: Swift.String, _ args: any Swift.CVarArg...)
+  public static func warn(_ format: Swift.String, _ args: any Swift.CVarArg...)
+  public static func notice(_ format: Swift.String, _ args: any Swift.CVarArg...)
+  public static func debug(_ format: Swift.String, _ args: any Swift.CVarArg...)
+  public static func requestLog(_ format: Swift.String, _ args: any Swift.CVarArg...)
+  @objc public static func logException(_ exception: Foundation.NSException)
+  @objc public static func addLoggerDelegate(_ delegate: (any YouboraLib.YBSwiftLogger)?)
+  @objc public static func removeLoggerDelegate(_ delegate: (any YouboraLib.YBSwiftLogger)?)
+  @objc public static func isAtLeastLevel(_ level: YouboraLib.YBSwiftLogLevel) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class YBCDNCompressed : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc open class YBChrono : ObjectiveC.NSObject, Foundation.NSCopying {
+  @objc public var startTime: Swift.Int64
+  @objc public var stopTime: Swift.Int64
+  @objc public var pauseTime: Swift.Int64
+  @objc public var offset: Swift.Int64
+  @objc public var now: Swift.Int64 {
+    @objc get
+  }
+  @objc public func getDeltaTime(_ stop: Swift.Bool) -> Swift.Int64
+  @objc public func getDeltaTime() -> Swift.Int64
+  @objc public func start()
+  @objc public func pause()
+  @objc public func resume()
+  @discardableResult
+  @objc public func stop() -> Swift.Int64
+  @objc public func reset()
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class YBErrorHandler : ObjectiveC.NSObject {
+  @objc public var cleanError: (() -> Swift.Void)?
+  @objc public init(secondsToClean: Swift.Int)
+  @objc public func isNewError(message: Swift.String?, code: Swift.String?) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class YBPlaybackFlags : ObjectiveC.NSObject {
+  @objc public var preloading: Swift.Bool
+  @objc public var started: Swift.Bool
+  @objc public var joined: Swift.Bool
+  @objc public var paused: Swift.Bool
+  @objc public var seeking: Swift.Bool
+  @objc public var buffering: Swift.Bool
+  @objc public var ended: Swift.Bool
+  @objc public var stopped: Swift.Bool
+  @objc public var adManifestRequested: Swift.Bool
+  @objc public var adInitiated: Swift.Bool
+  @objc public var adBreakStarted: Swift.Bool
+  @objc public func reset()
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension YouboraLib.OptionKeyType : Swift.Equatable {}
+extension YouboraLib.OptionKeyType : Swift.Hashable {}
+extension YouboraLib.YBSwiftLogLevel : Swift.Equatable {}
+extension YouboraLib.YBSwiftLogLevel : Swift.Hashable {}
+extension YouboraLib.YBSwiftLogLevel : Swift.RawRepresentable {}

@@ -1,0 +1,11 @@
+framework module YouboraLib {
+  umbrella header "YouboraLib.h"
+
+  export *
+  module * { export * }
+}
+
+module YouboraLib.Swift {
+  header "YouboraLib-Swift.h"
+  requires objc
+}
