@@ -3,7 +3,7 @@
 
 target 'YouboraLib iOS' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  use_frameworks!
+  # use_frameworks!
 
   # Pods for YouboraLib
   platform :ios, '8.0'
@@ -18,7 +18,7 @@ end
 
 target 'YouboraLib tvOS' do
 
-  use_frameworks!
+  # use_frameworks!
   
   platform :tvos, '9.0'
 
@@ -28,4 +28,14 @@ target 'YouboraLib tvOS' do
     pod 'OCMockito', '~> 4.1'
   end
 
+end
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.1'
+      end
+    end
+  end
 end
