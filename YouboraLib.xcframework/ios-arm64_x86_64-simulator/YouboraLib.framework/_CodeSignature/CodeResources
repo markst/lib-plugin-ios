@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/YouboraLib-Swift.h</key>
 		<data>
-		PRtX1WPVwIIiKX/dzGPCy8BVvok=
+		2MLuTTfNMmXwpuUpnAloEuWBgMw=
 		</data>
 		<key>Headers/YouboraLib.h</key>
 		<data>
@@ -114,47 +114,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		f660Tibh0P8tbO0Jj1poEb9PBWA=
+		douEc/BaPC9pSdugjoXiXKaLBkw=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		lR3/UqkpnjyjCR3hlRYRbpszt2Q=
+		ZEWwqEOCI/2jU9yLsDfnT/TyZBA=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		CUef84NznSR41wGG/HTqDwBgBv4=
+		mBQwzM6gY2J7mwwmQTOREE+9DEE=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lC/7hBl25DyfZPVmk3bggKbP6H4=
+		vdJ50NkeuR7CzEIYmgCUL6Cqz4M=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CUef84NznSR41wGG/HTqDwBgBv4=
+		mBQwzM6gY2J7mwwmQTOREE+9DEE=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		M2TvfhN5EVyVOZIlfuzw6UIHEaY=
+		h286dFVgtuISt5stHow7mBWaTS4=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		lR3/UqkpnjyjCR3hlRYRbpszt2Q=
+		ZEWwqEOCI/2jU9yLsDfnT/TyZBA=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		JXPMb7ygYYsbYtBgemv8D3xgRc0=
+		KzpgNlN+YdZpC59bKe051IRgmX0=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		jFnPtoaSnEHMZ8c3Czc0l2V9mtY=
+		d8HNBTEk1UKVONj8HQeiWJWRiEc=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		JXPMb7ygYYsbYtBgemv8D3xgRc0=
+		KzpgNlN+YdZpC59bKe051IRgmX0=
 		</data>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/E29KNjge7KnCdHcVkxuvOHA7EI=
+		A8Sf2l4D1XsxLFdV/f8euAL6b8g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -442,11 +442,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PRtX1WPVwIIiKX/dzGPCy8BVvok=
+			2MLuTTfNMmXwpuUpnAloEuWBgMw=
 			</data>
 			<key>hash2</key>
 			<data>
-			WiHJ72JEn52Kh8kt1k+SRPrcnzNmg4+aIbIjESPD3cw=
+			muRDMXSXGW0LIXqvlgm3iRkRU82i+kTNk96zY945h2Q=
 			</data>
 		</dict>
 		<key>Headers/YouboraLib.h</key>
@@ -464,110 +464,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lR3/UqkpnjyjCR3hlRYRbpszt2Q=
+			ZEWwqEOCI/2jU9yLsDfnT/TyZBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			SqqOUAuGxCB40SG6D543/xsPw4JWLT1VVNMagUh10xs=
+			9UyuFc88WqHjvSp64mHEI/GVhLbpy8N3/8VQIwsbBMw=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CUef84NznSR41wGG/HTqDwBgBv4=
+			mBQwzM6gY2J7mwwmQTOREE+9DEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			qkqITfred8h8jfr2JSdjtA8T4hVMTwGhJw979/PzeCE=
+			9+OML0sFk2FJIlXLQVnk3SBCB5SDpZ1QNH/g9lIlb8k=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lC/7hBl25DyfZPVmk3bggKbP6H4=
+			vdJ50NkeuR7CzEIYmgCUL6Cqz4M=
 			</data>
 			<key>hash2</key>
 			<data>
-			le+FeTVOpWLBAl2LyFoMtigkGNpIBWSuCu9s0n+/Enc=
+			Q6cdDayf9snx39jO75FEzKDq0Om13l3DTjjgjHkFkY0=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CUef84NznSR41wGG/HTqDwBgBv4=
+			mBQwzM6gY2J7mwwmQTOREE+9DEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			qkqITfred8h8jfr2JSdjtA8T4hVMTwGhJw979/PzeCE=
+			9+OML0sFk2FJIlXLQVnk3SBCB5SDpZ1QNH/g9lIlb8k=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			M2TvfhN5EVyVOZIlfuzw6UIHEaY=
+			h286dFVgtuISt5stHow7mBWaTS4=
 			</data>
 			<key>hash2</key>
 			<data>
-			obE3pkIjzY4pa0vN9L2cIq6ug5uITxMNpC40NsKtWKI=
+			Qc5YO5ALjRegmvV8uVZJtZTaxM4nTrnpbrQvBCNry/c=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lR3/UqkpnjyjCR3hlRYRbpszt2Q=
+			ZEWwqEOCI/2jU9yLsDfnT/TyZBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			SqqOUAuGxCB40SG6D543/xsPw4JWLT1VVNMagUh10xs=
+			9UyuFc88WqHjvSp64mHEI/GVhLbpy8N3/8VQIwsbBMw=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JXPMb7ygYYsbYtBgemv8D3xgRc0=
+			KzpgNlN+YdZpC59bKe051IRgmX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			1S9zJq99Q48xumecAO1+tAKitbFloxlhvnWV6dx8ORw=
+			EswHRno/JdLFaHq0xtAb1iGOcFsHI49i8PFAQkndE6s=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jFnPtoaSnEHMZ8c3Czc0l2V9mtY=
+			d8HNBTEk1UKVONj8HQeiWJWRiEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			iXXuVqTEfIWsf5tIl6JC+xqNbkYUINNIsAY+Wz01P48=
+			EPSIFaGqIWbO9ItoP7uPnVhQmohpL133NUrA8AbcWwE=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JXPMb7ygYYsbYtBgemv8D3xgRc0=
+			KzpgNlN+YdZpC59bKe051IRgmX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			1S9zJq99Q48xumecAO1+tAKitbFloxlhvnWV6dx8ORw=
+			EswHRno/JdLFaHq0xtAb1iGOcFsHI49i8PFAQkndE6s=
 			</data>
 		</dict>
 		<key>Modules/YouboraLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/E29KNjge7KnCdHcVkxuvOHA7EI=
+			A8Sf2l4D1XsxLFdV/f8euAL6b8g=
 			</data>
 			<key>hash2</key>
 			<data>
-			dBJ8XkYSqKflO7CBBt2xOEBBPlxf+d/SMyjl3TjXkyI=
+			NxZrWuly3/mhJcht2j1h95qsZWf5wenoyZpged402aM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
